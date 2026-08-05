@@ -1,6 +1,6 @@
 import { Icon, Label, NativeTabs } from 'expo-router/unstable-native-tabs';
 
-export default function TabLayout() {
+export default function TabsLayout() {
   return (
     <NativeTabs>
       <NativeTabs.Trigger name="index">
