@@ -1,5 +1,5 @@
 import type { IVerifyAccountSignUp } from "@/global/interfaces";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { JSX } from "react/jsx-runtime";
 import { Button } from "./button";
 
@@ -8,7 +8,8 @@ export const VerifyAccount = ({
   setCode,
   isLoading,
   errors,
-  handlerVerifyCodePress
+  handlerVerifyCodePress,
+  handlerRetryVerifyCodePress,
 }: IVerifyAccountSignUp): JSX.Element => (
   <View
     style={{
@@ -41,6 +42,11 @@ export const VerifyAccount = ({
       handlerPress={handlerVerifyCodePress}
       isDisabled={isLoading}
     />
+    <TouchableOpacity
+      onPress={handlerRetryVerifyCodePress}
+    >
+      <Text>I need a new code</Text>
+    </TouchableOpacity>
   </View>
 )
 
