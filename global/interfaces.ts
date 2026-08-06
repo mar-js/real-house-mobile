@@ -20,3 +20,11 @@ export interface IButtonActionSignUp {
   handlerPress: () => Promise<void>
   isDisabled: boolean
 }
+
+export interface IVerifyAccountSignUp {
+  code: string
+  setCode: Dispatch<SetStateAction<string>>
+  isLoading: boolean
+  errors: SignUpErrors
+  handlerVerifyCodePress: () => Promise<void>
+}
