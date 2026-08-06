@@ -1,7 +1,7 @@
-import { IFormSignUp } from "@/global/interfaces"
+import type { IFormSignUp } from "@/global/interfaces"
 import { Link } from "expo-router"
 import { StyleSheet, Text, TextInput, View } from "react-native"
-import { JSX } from "react/jsx-runtime"
+import type { JSX } from "react/jsx-runtime"
 import { Button } from "./button"
 
 export const Form = ({

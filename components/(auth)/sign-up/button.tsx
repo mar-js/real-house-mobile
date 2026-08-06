@@ -1,6 +1,6 @@
 import type { IButtonActionSignUp } from "@/global/interfaces";
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity } from "react-native";
-import { JSX } from "react/jsx-runtime";
+import type { JSX } from "react/jsx-runtime";
 
 export const Button = ({
   text,
