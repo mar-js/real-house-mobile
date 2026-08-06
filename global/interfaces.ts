@@ -27,4 +27,5 @@ export interface IVerifyAccountSignUp {
   isLoading: boolean
   errors: SignUpErrors
   handlerVerifyCodePress: () => Promise<void>
+  handlerRetryVerifyCodePress: () => void
 }
