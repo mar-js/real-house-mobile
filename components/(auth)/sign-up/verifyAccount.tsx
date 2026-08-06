@@ -13,7 +13,6 @@ export const VerifyAccount = ({
 }: IVerifyAccountSignUp): JSX.Element => (
   <View
     style={{
-      flexDirection: "row",
       gap: 15
     }}
   >
@@ -45,7 +44,7 @@ export const VerifyAccount = ({
     <TouchableOpacity
       onPress={handlerRetryVerifyCodePress}
     >
-      <Text>I need a new code</Text>
+      <Text style={{ color: "#5F9CED" }}>I need a new code</Text>
     </TouchableOpacity>
   </View>
 )
