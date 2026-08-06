@@ -10,7 +10,7 @@ export const Button = ({
   <TouchableOpacity
     onPress={handlerPress}
     disabled={isDisabled}
-    style={{ ...styles.button, }}
+    style={{ ...styles.button }}
   >
     {isDisabled ? (
       <ActivityIndicator
