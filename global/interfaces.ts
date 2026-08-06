@@ -14,3 +14,9 @@ export interface IFormSignUp {
   isLoading: boolean
   handlerSignUpPress: () => Promise<void>
 }
+
+export interface IButtonActionSignUp {
+  text: string
+  handlerPress: () => Promise<void>
+  isDisabled: boolean
+}
