@@ -25,13 +25,14 @@ export const Form = ({
 		<View
 			style={{
 				flexDirection: "row",
+				justifyContent: "space-between",
 				gap: 15,
 			}}
 		>
 			<TextInput
 				style={{
 					...styles.input,
-					flexGrow: 1,
+					width: "47%",
 				}}
 				placeholder="First name"
 				placeholderTextColor="#d6d6d6"
@@ -42,7 +43,7 @@ export const Form = ({
 			<TextInput
 				style={{
 					...styles.input,
-					flexGrow: 1,
+					width: "47%",
 				}}
 				placeholder="Last name"
 				placeholderTextColor="#d6d6d6"
