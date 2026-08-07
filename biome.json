@@ -56,11 +56,7 @@
 				"noWith": "warn"
 			}
 		},
-		"includes": [
-			"**",
-			"!android/app/build",
-			"!dist/*"
-		]
+		"includes": ["**", "!android/app/build", "!dist/*"]
 	},
 	"javascript": {
 		"formatter": {
@@ -213,35 +209,22 @@
 	},
 	"overrides": [
 		{
-			"includes": [
-				"**/*.d.ts"
-			],
+			"includes": ["**/*.d.ts"],
 			"linter": {
 				"rules": {}
 			}
 		},
 		{
-			"includes": [
-				"**/metro.config.js"
-			],
+			"includes": ["**/metro.config.js"],
 			"javascript": {
-				"globals": [
-					"exports"
-				]
+				"globals": ["exports"]
 			}
 		},
 		{
-			"includes": [
-				"**/*.js",
-				"**/*.jsx"
-			]
+			"includes": ["**/*.js", "**/*.jsx"]
 		},
 		{
-			"includes": [
-				"**/*.ts",
-				"**/*.tsx",
-				"**/*.d.ts"
-			],
+			"includes": ["**/*.ts", "**/*.tsx", "**/*.d.ts"],
 			"javascript": {
 				"globals": []
 			},
@@ -272,9 +255,7 @@
 			}
 		},
 		{
-			"includes": [
-				"*.web.*"
-			]
+			"includes": ["*.web.*"]
 		}
 	],
 	"assist": {
