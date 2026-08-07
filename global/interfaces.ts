@@ -1,6 +1,16 @@
 import type { SignInErrors, SignUpErrors } from "@clerk/expo/types";
 import type { Dispatch, SetStateAction } from "react";
 
+export interface IVerifyAccountSignIn {
+	code: string;
+	setCode: Dispatch<SetStateAction<string>>;
+	isLoading: boolean;
+	errors: SignInErrors;
+	handlerVerifyCodePress: () => Promise<void>;
+	handlerRetryVerifyCodePress: () => void;
+}
+
+
 export interface IFormSignIn {
 	emailAddress: string;
 	setEmailAddress: Dispatch<SetStateAction<string>>;
