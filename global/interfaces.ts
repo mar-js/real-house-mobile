@@ -1,5 +1,15 @@
-import type { SignUpErrors } from "@clerk/expo/types";
+import type { SignInErrors, SignUpErrors } from "@clerk/expo/types";
 import type { Dispatch, SetStateAction } from "react";
+
+export interface IFormSignIn {
+	emailAddress: string;
+	setEmailAddress: Dispatch<SetStateAction<string>>;
+	password: string;
+	setPassword: Dispatch<SetStateAction<string>>;
+	errors: SignInErrors;
+	isLoading: boolean;
+	handlerSignInPress: () => Promise<void>;
+}
 
 export interface IResetAccount {
 	handlerCancelSignUpPress: () => void
