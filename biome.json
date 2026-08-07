@@ -6,11 +6,18 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"ignoreUnknown": false
+		"ignoreUnknown": false,
+		"includes": [
+			"android/app/build/**/*",
+			"dist/**/*",
+			".expo/**/*",
+			"node_modules/**/*"
+		]
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "tab"
+		"indentStyle": "tab",
+		"bracketSpacing": true
 	},
 	"linter": {
 		"enabled": true,
@@ -57,7 +64,10 @@
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "double"
+			"quoteStyle": "double",
+			"semicolons": "asNeeded",
+			"trailingCommas": "all",
+			"bracketSpacing": true
 		},
 		"globals": [
 			"onanimationend",
@@ -186,7 +196,19 @@
 			"ondragenter",
 			"onpopstate",
 			"__DEV__",
-			"onemptied"
+			"onemptied",
+			"process",
+			"module",
+			"require",
+			"exports",
+			"console",
+			"setTimeout",
+			"clearTimeout",
+			"setInterval",
+			"clearInterval",
+			"fetch",
+			"requestAnimationFrame",
+			"cancelAnimationFrame"
 		]
 	},
 	"overrides": [
