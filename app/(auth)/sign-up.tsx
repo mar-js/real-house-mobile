@@ -1,9 +1,10 @@
 import { Form } from "@/components/(auth)/sign-up/form";
+import { ResetAccount } from "@/components/(auth)/sign-up/ResetAccount";
 import { VerifyAccount } from "@/components/(auth)/sign-up/verifyAccount";
 import { useAuth, useSignUp } from "@clerk/expo";
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Button, Image, ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 
 export default function SignUp() {
 	const { isSignedIn, isLoaded: authLoaded } = useAuth();
@@ -122,19 +123,17 @@ export default function SignUp() {
 								We sent a code to {emailAddress}
 							</Text>
 						</View>
-						<VerifyAccount
-							code={code}
-							setCode={setCode}
-							errors={errors}
-							isLoading={isLoading}
-							handlerVerifyCodePress={handlerVerifyCodePress}
-							handlerRetryVerifyCodePress={handlerRetryVerifyCodePress}
-						/>
-						<View style={{ marginTop: 20 }}>
-							<Button
-								title="Volver e Intentar otro correo"
-								onPress={handlerCancelSignUpPress}
-								color="#ef4444"
+						<View style={{ gap: 50 }}>
+							<VerifyAccount
+								code={code}
+								setCode={setCode}
+								errors={errors}
+								isLoading={isLoading}
+								handlerVerifyCodePress={handlerVerifyCodePress}
+								handlerRetryVerifyCodePress={handlerRetryVerifyCodePress}
+							/>
+							<ResetAccount
+								handlerCancelSignUpPress={handlerCancelSignUpPress}
 							/>
 						</View>
 					</>
