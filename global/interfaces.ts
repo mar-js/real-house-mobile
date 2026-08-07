@@ -1,6 +1,12 @@
 import type { SignInErrors, SignUpErrors } from "@clerk/expo/types";
 import type { Dispatch, SetStateAction } from "react";
 
+export interface IButtonActionSignIn {
+	text: string;
+	handlerPress: () => Promise<void>;
+	isDisabled: boolean;
+}
+
 export interface IVerifyAccountSignIn {
 	code: string;
 	setCode: Dispatch<SetStateAction<string>>;
