@@ -8,7 +8,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "bunx --bun @biomejs/biome lint --write"
+    "lint": "bunx --bun @biomejs/biome check",
+    "lint:write": "bunx --bun @biomejs/biome check --write"
   },
   "dependencies": {
     "@clerk/expo": "^4.2.1",
