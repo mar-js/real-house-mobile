@@ -1,6 +1,10 @@
 import type { SignUpErrors } from "@clerk/expo/types";
 import type { Dispatch, SetStateAction } from "react";
 
+export interface IResetAccount {
+	handlerCancelSignUpPress: () => void
+}
+
 export interface IFormSignUp {
 	firstName: string;
 	setFirstName: Dispatch<SetStateAction<string>>;
