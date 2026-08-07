@@ -3,11 +3,11 @@ import { VerifyAccount } from "@/components/(auth)/sign-up/verifyAccount";
 import { useAuth, useSignUp } from "@clerk/expo";
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Image, ScrollView, Text, View } from "react-native";
+import { Button, Image, ScrollView, Text, View } from "react-native";
 
 export default function SignUp() {
+	const { isSignedIn, isLoaded: authLoaded } = useAuth();
 	const { signUp, errors, fetchStatus } = useSignUp();
-	const { isSignedIn } = useAuth();
 	const router = useRouter();
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
@@ -15,14 +15,23 @@ export default function SignUp() {
 	const [password, setPassword] = useState("");
 	const [code, setCode] = useState("");
 	const isLoading = fetchStatus === "fetching";
-	const conditionVerifyCode =
-		signUp.status === "missing_requirements" &&
-		signUp.unverifiedFields.includes("email_address") &&
-		signUp.missingFields.length === 0;
 
-	if (signUp.status === "complete" || isSignedIn) return null;
+	const [forceReset, setForceReset] = useState(false);
+
+	if (!authLoaded) return null;
+	if (isSignedIn) return null;
+
+	const conditionVerifyCode =
+		!forceReset &&
+		signUp?.status === "missing_requirements" &&
+		signUp?.unverifiedFields?.includes("email_address") &&
+		signUp?.missingFields?.length === 0;
+
+	if (signUp?.status === "complete") return null;
 
 	const handlerSignUpPress = async () => {
+		setForceReset(false);
+
 		const { error } = await signUp.password({
 			firstName,
 			lastName,
@@ -55,6 +64,15 @@ export default function SignUp() {
 
 	const handlerRetryVerifyCodePress = () => {
 		signUp.verifications.sendEmailCode();
+	};
+
+	const handlerCancelSignUpPress = () => {
+		setFirstName("");
+		setLastName("");
+		setEmailAddress("");
+		setPassword("");
+		setCode("");
+		setForceReset(true);
 	};
 
 	return (
@@ -112,6 +130,13 @@ export default function SignUp() {
 							handlerVerifyCodePress={handlerVerifyCodePress}
 							handlerRetryVerifyCodePress={handlerRetryVerifyCodePress}
 						/>
+						<View style={{ marginTop: 20 }}>
+							<Button
+								title="Volver e Intentar otro correo"
+								onPress={handlerCancelSignUpPress}
+								color="#ef4444"
+							/>
+						</View>
 					</>
 				) : (
 					<>
