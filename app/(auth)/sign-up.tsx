@@ -1,5 +1,5 @@
 import { Form } from "@/components/(auth)/sign-up/form";
-import { ResetAccount } from "@/components/(auth)/sign-up/ResetAccount";
+import { ResetAccount } from "@/components/(auth)/sign-up/resetAccount";
 import { VerifyAccount } from "@/components/(auth)/sign-up/verifyAccount";
 import { useAuth, useSignUp } from "@clerk/expo";
 import { useRouter } from "expo-router";
