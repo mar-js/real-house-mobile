@@ -1,12 +1,5 @@
-import { Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { PlaceholderScreen } from "@/components/ui";
 
 export default function Home() {
-	return (
-		<SafeAreaView>
-			<View>
-				<Text>Home</Text>
-			</View>
-		</SafeAreaView>
-	);
+	return <PlaceholderScreen title="Home" />;
 }
