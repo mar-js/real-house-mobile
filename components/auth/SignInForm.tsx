@@ -26,7 +26,7 @@ export const SignInForm = ({
 			value={emailAddress}
 			onChangeText={setEmailAddress}
 		/>
-		<FieldError message={errors.fields.identifier?.message} />
+		<FieldError message={errors?.fields?.identifier?.message} />
 		<TextInput
 			style={[authStyles.input, { width: "100%" }]}
 			placeholder="Password"
@@ -35,7 +35,7 @@ export const SignInForm = ({
 			onChangeText={setPassword}
 			secureTextEntry
 		/>
-		<FieldError message={errors.fields.password?.message} />
+		<FieldError message={errors?.fields?.password?.message} />
 		<Button
 			text="Sign In"
 			handlerPress={handlerSignInPress}

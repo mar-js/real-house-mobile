@@ -23,7 +23,7 @@ export const VerifyAccount = ({
 			onChangeText={setCode}
 			keyboardType="number-pad"
 		/>
-		{errors.fields.code && (
+		{errors?.fields?.code && (
 			<Text style={authStyles.errorText}>{errors.fields.code.message}</Text>
 		)}
 		<Button

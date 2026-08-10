@@ -54,7 +54,7 @@ export const SignUpForm = ({
 			value={emailAddress}
 			onChangeText={setEmailAddress}
 		/>
-		<FieldError message={errors.fields.emailAddress?.message} />
+		<FieldError message={errors?.fields?.emailAddress?.message} />
 		<TextInput
 			style={[authStyles.input, { width: "100%" }]}
 			placeholder="Password"
@@ -63,7 +63,7 @@ export const SignUpForm = ({
 			onChangeText={setPassword}
 			secureTextEntry
 		/>
-		<FieldError message={errors.fields.password?.message} />
+		<FieldError message={errors?.fields?.password?.message} />
 		<Button
 			text="Sign Up"
 			handlerPress={handlerSignUpPress}
