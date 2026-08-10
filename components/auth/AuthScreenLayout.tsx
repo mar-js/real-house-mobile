@@ -1,3 +1,4 @@
+import { colors, spacing } from "@/theme";
 import type { ReactNode } from "react";
 import { Image, ScrollView, View } from "react-native";
 import type { JSX } from "react/jsx-runtime";
@@ -12,7 +13,7 @@ export const AuthScreenLayout = ({
 	<ScrollView
 		contentContainerStyle={{
 			flexGrow: 1,
-			backgroundColor: "#ffffff",
+			backgroundColor: colors.background,
 		}}
 		keyboardShouldPersistTaps="handled"
 	>
@@ -20,14 +21,14 @@ export const AuthScreenLayout = ({
 			style={{
 				flexGrow: 1,
 				justifyContent: "center",
-				padding: 20,
+				padding: spacing.lg,
 			}}
 		>
 			<Image
 				source={require("@/assets/images/logo.png")}
 				style={{
-					width: 100,
-					height: 100,
+					width: spacing["2xl"],
+					height: spacing["2xl"],
 				}}
 				resizeMode="contain"
 			/>

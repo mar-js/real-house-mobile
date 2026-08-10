@@ -1,8 +1,9 @@
+import { authStyles } from "@/styles/auth";
+import { colors, spacing } from "@/theme";
 import type { IFormSignUp } from "@/types/auth";
 import { Link } from "expo-router";
 import { Text, TextInput, View } from "react-native";
 import type { JSX } from "react/jsx-runtime";
-import { authStyles } from "@/styles/auth";
 import { Button } from "./Button";
 import { FieldError } from "./FieldError";
 
@@ -19,18 +20,18 @@ export const SignUpForm = ({
 	isLoading,
 	handlerSignUpPress,
 }: IFormSignUp): JSX.Element => (
-	<View style={{ gap: 15 }}>
+	<View style={{ gap: spacing.md }}>
 		<View
 			style={{
 				flexDirection: "row",
 				justifyContent: "space-between",
-				gap: 15,
+				gap: spacing.md,
 			}}
 		>
 			<TextInput
 				style={[authStyles.input, { width: "47%" }]}
 				placeholder="First name"
-				placeholderTextColor="#d6d6d6"
+				placeholderTextColor={colors.placeholder}
 				autoCapitalize="words"
 				value={firstName}
 				onChangeText={setFirstName}
@@ -38,7 +39,7 @@ export const SignUpForm = ({
 			<TextInput
 				style={[authStyles.input, { width: "47%" }]}
 				placeholder="Last name"
-				placeholderTextColor="#d6d6d6"
+				placeholderTextColor={colors.placeholder}
 				autoCapitalize="words"
 				value={lastName}
 				onChangeText={setLastName}
@@ -47,7 +48,7 @@ export const SignUpForm = ({
 		<TextInput
 			style={[authStyles.input, { width: "100%" }]}
 			placeholder="Email address"
-			placeholderTextColor="#d6d6d6"
+			placeholderTextColor={colors.placeholder}
 			autoCapitalize="none"
 			keyboardType="email-address"
 			value={emailAddress}
@@ -57,7 +58,7 @@ export const SignUpForm = ({
 		<TextInput
 			style={[authStyles.input, { width: "100%" }]}
 			placeholder="Password"
-			placeholderTextColor="#d6d6d6"
+			placeholderTextColor={colors.placeholder}
 			value={password}
 			onChangeText={setPassword}
 			secureTextEntry
@@ -72,7 +73,7 @@ export const SignUpForm = ({
 			style={{
 				flexDirection: "row",
 				justifyContent: "center",
-				gap: 5,
+				gap: spacing.xs,
 			}}
 		>
 			<Text style={authStyles.mutedText}>Already have an account?</Text>

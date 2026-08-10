@@ -1,3 +1,4 @@
+import { spacing } from "@/theme";
 import type { IAuthVerifySection } from "@/types/auth";
 import { View } from "react-native";
 import type { JSX } from "react/jsx-runtime";
@@ -20,7 +21,7 @@ export const AuthVerifySection = ({
 			title="Verify your account"
 			subtitle={`We sent a code to ${emailAddress}`}
 		/>
-		<View style={{ gap: 50 }}>
+		<View style={{ gap: spacing.xl }}>
 			<VerifyAccount
 				code={code}
 				setCode={setCode}

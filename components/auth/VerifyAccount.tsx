@@ -1,7 +1,8 @@
+import { authStyles } from "@/styles/auth";
+import { colors, spacing } from "@/theme";
 import type { IVerifyAccount } from "@/types/auth";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import type { JSX } from "react/jsx-runtime";
-import { authStyles } from "@/styles/auth";
 import { Button } from "./Button";
 
 export const VerifyAccount = ({
@@ -12,11 +13,11 @@ export const VerifyAccount = ({
 	handlerVerifyCodePress,
 	handlerRetryVerifyCodePress,
 }: IVerifyAccount): JSX.Element => (
-	<View style={{ gap: 15 }}>
+	<View style={{ gap: spacing.md }}>
 		<TextInput
 			style={[authStyles.input, { width: "100%" }]}
 			placeholder="Enter verification code"
-			placeholderTextColor="#d6d6d6"
+			placeholderTextColor={colors.placeholder}
 			autoCapitalize="none"
 			value={code}
 			onChangeText={setCode}
