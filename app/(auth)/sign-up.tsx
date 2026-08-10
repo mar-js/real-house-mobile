@@ -1,10 +1,12 @@
-import { Form } from "@/components/(auth)/sign-up/form";
-import { ResetAccount } from "@/components/(auth)/sign-up/resetAccount";
-import { VerifyAccount } from "@/components/(auth)/sign-up/verifyAccount";
+import {
+	AuthScreenLayout,
+	AuthSectionHeader,
+	AuthVerifySection,
+	SignUpForm,
+} from "@/components/auth";
 import { useAuth, useSignUp } from "@clerk/expo";
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Image, ScrollView, Text, View } from "react-native";
 
 export default function SignUp() {
 	const { isSignedIn, isLoaded: authLoaded } = useAuth();
@@ -16,7 +18,6 @@ export default function SignUp() {
 	const [password, setPassword] = useState("");
 	const [code, setCode] = useState("");
 	const isLoading = fetchStatus === "fetching";
-
 	const [forceReset, setForceReset] = useState(false);
 
 	if (!authLoaded) return null;
@@ -49,9 +50,7 @@ export default function SignUp() {
 	};
 
 	const handlerVerifyCodePress = async () => {
-		await signUp.verifications.verifyEmailCode({
-			code,
-		});
+		await signUp.verifications.verifyEmailCode({ code })
 
 		if (signUp.status === "complete") {
 			await signUp.finalize({
@@ -77,106 +76,39 @@ export default function SignUp() {
 	};
 
 	return (
-		<ScrollView
-			contentContainerStyle={{
-				flexGrow: 1,
-				backgroundColor: "#ffffff",
-			}}
-			keyboardShouldPersistTaps="handled"
-		>
-			<View
-				style={{
-					flexGrow: 1,
-					justifyContent: "center",
-					padding: 20,
-				}}
-			>
-				<Image
-					source={require("@/assets/images/logo.png")}
-					style={{
-						width: 100,
-						height: 100,
-					}}
-					resizeMode="contain"
+		<AuthScreenLayout>
+			{conditionVerifyCode ? (
+				<AuthVerifySection
+					emailAddress={emailAddress}
+					code={code}
+					setCode={setCode}
+					errors={errors}
+					isLoading={isLoading}
+					handlerVerifyCodePress={handlerVerifyCodePress}
+					handlerRetryVerifyCodePress={handlerRetryVerifyCodePress}
+					handlerCancelSignUpPress={handlerCancelSignUpPress}
 				/>
-				{conditionVerifyCode ? (
-					<>
-						<View
-							style={{
-								marginBlock: 10,
-							}}
-						>
-							<Text
-								style={{
-									fontSize: 30,
-									fontWeight: "bold",
-									color: "#1f2937",
-								}}
-							>
-								Verify your account
-							</Text>
-							<Text
-								style={{
-									color: "#bababa",
-								}}
-							>
-								We sent a code to {emailAddress}
-							</Text>
-						</View>
-						<View style={{ gap: 50 }}>
-							<VerifyAccount
-								code={code}
-								setCode={setCode}
-								errors={errors}
-								isLoading={isLoading}
-								handlerVerifyCodePress={handlerVerifyCodePress}
-								handlerRetryVerifyCodePress={handlerRetryVerifyCodePress}
-							/>
-							<ResetAccount
-								handlerCancelSignUpPress={handlerCancelSignUpPress}
-							/>
-						</View>
-					</>
-				) : (
-					<>
-						<View
-							style={{
-								marginBlock: 10,
-							}}
-						>
-							<Text
-								style={{
-									fontSize: 30,
-									fontWeight: "bold",
-									color: "#1f2937",
-								}}
-							>
-								Create account
-							</Text>
-							<Text
-								style={{
-									color: "#bababa",
-								}}
-							>
-								Find your dream home today
-							</Text>
-						</View>
-						<Form
-							firstName={firstName}
-							setFirstName={setFirstName}
-							lastName={lastName}
-							setLastName={setLastName}
-							emailAddress={emailAddress}
-							setEmailAddress={setEmailAddress}
-							password={password}
-							setPassword={setPassword}
-							errors={errors}
-							isLoading={isLoading}
-							handlerSignUpPress={handlerSignUpPress}
-						/>
-					</>
-				)}
-			</View>
-		</ScrollView>
+			) : (
+				<>
+					<AuthSectionHeader
+						title="Create account"
+						subtitle="Find your dream home today"
+					/>
+					<SignUpForm
+						firstName={firstName}
+						setFirstName={setFirstName}
+						lastName={lastName}
+						setLastName={setLastName}
+						emailAddress={emailAddress}
+						setEmailAddress={setEmailAddress}
+						password={password}
+						setPassword={setPassword}
+						errors={errors}
+						isLoading={isLoading}
+						handlerSignUpPress={handlerSignUpPress}
+					/>
+				</>
+			)}
+		</AuthScreenLayout>
 	);
 }
