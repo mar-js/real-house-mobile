@@ -1,4 +1,4 @@
-import { colors, spacing } from "@/theme";
+import { colors, size, spacing } from "@/theme";
 import type { IAuthSectionHeader } from "@/types/auth";
 import { Text, View } from "react-native";
 import type { JSX } from "react/jsx-runtime";
@@ -10,7 +10,7 @@ export const AuthSectionHeader = ({
 	<View style={{ marginBlock: spacing.sm }}>
 		<Text
 			style={{
-				fontSize: 30,
+				fontSize: size.lg,
 				fontWeight: "bold",
 				color: colors.textPrimary,
 			}}
