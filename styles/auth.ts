@@ -1,41 +1,42 @@
+import { colors, radius, spacing } from "@/theme";
 import { StyleSheet } from "react-native";
 
 export const authStyles = StyleSheet.create({
 	input: {
-		borderColor: "#bababa",
+		borderColor: colors.border,
 		borderWidth: 1,
 		borderStyle: "solid",
-		borderRadius: 10,
-		padding: 10,
+		borderRadius: radius.md,
+		padding: spacing.sm,
 	},
 	button: {
 		width: "100%",
-		borderColor: "transparent",
+		borderColor: colors.transparent,
 		borderWidth: 1,
 		borderStyle: "solid",
-		borderRadius: 10,
-		padding: 10,
-		backgroundColor: "#5F9CED",
+		borderRadius: radius.md,
+		padding: spacing.sm,
+		backgroundColor: colors.primary,
 		alignItems: "center",
 	},
 	buttonText: {
-		color: "#ffffff",
+		color: colors.textInverse,
 		fontWeight: "bold",
 	},
 	errorText: {
-		color: "#F05656",
-		marginBottom: 10,
+		color: colors.error,
+		marginBottom: spacing.sm,
 	},
 	linkText: {
-		color: "#5696F0",
+		color: colors.link,
 	},
 	mutedText: {
-		color: "#9E9E9E",
+		color: colors.textMuted,
 	},
 	resetText: {
-		color: "#fc6d6d",
+		color: colors.danger,
 	},
 	retryText: {
-		color: "#5F9CED",
+		color: colors.primary,
 	},
 });
