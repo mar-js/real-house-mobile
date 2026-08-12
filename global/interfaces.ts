@@ -6,6 +6,10 @@ export type {
 	IVerifyAccount as IVerifyAccountSignUp
 } from "@/types/auth";
 
+export interface IFeaturedCard {
+	property: IProperty
+}
+
 export interface IProperty {
 	id: string
 	title: string
