@@ -1,2 +1,3 @@
 export { FeaturedCard } from "./FeaturedCard";
 export { PlaceholderScreen } from "./PlaceholderScreen";
+export { PropertyCard } from "./PropertyCard";
