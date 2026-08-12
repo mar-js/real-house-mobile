@@ -6,6 +6,12 @@ export type {
 	IVerifyAccount as IVerifyAccountSignUp
 } from "@/types/auth";
 
+export interface IPropertyCard {
+	property: IProperty
+	onUnsave?: () => void
+	showSave?: boolean
+}
+
 export interface IFeaturedCard {
 	property: IProperty
 }
