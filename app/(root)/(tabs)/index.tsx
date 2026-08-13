@@ -102,7 +102,7 @@ export default function Home() {
 								boxShadow: "1px 1px 6px gray",
 								elevation: 2
 							}}
-							onPress={() => handlerNavigationSearchPress}
+							onPress={() => handlerNavigationSearchPress()}
 						>
 							<View
 								style={{
