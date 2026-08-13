@@ -41,7 +41,7 @@ export default function Home() {
 	}, [])
 
 	const handlerNavigationSearchPress = (isOpenFilters: boolean = false) => (
-		router.push(`/(root)/(tabs)/search?openFilters=${isOpenFilters}"`)
+		router.push(`/(root)/(tabs)/search?openFilters=${isOpenFilters}`)
 	)
 
 	useFocusEffect(() => {
