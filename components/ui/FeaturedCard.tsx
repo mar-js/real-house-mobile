@@ -27,7 +27,7 @@ export const FeaturedCard = ({ property }: IFeaturedCard): JSX.Element => {
     >
       <Image
         source={{
-          uri: property.images[0]
+          uri: property.images.length > 0 ? property.images[0] : require("@/assets/images/logo.png")
         }}
         style={{
           width: "100%",
