@@ -6,6 +6,12 @@ export type {
 	IVerifyAccount as IVerifyAccountSignUp
 } from "@/types/auth";
 
+export interface IFilterModal {
+	visible: boolean
+	onClose: () => void
+	activeCount: number
+}
+
 export interface IPropertyCard {
 	property: IProperty
 	onUnsave?: () => void
