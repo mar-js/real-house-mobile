@@ -178,9 +178,33 @@ export default function Home() {
 					</View>
 				)}
 				ListEmptyComponent={
-					loading ? null : (
-						<View>
-							<Text>No properties found</Text>
+					loading ? (
+						<ActivityIndicator
+							size="large"
+							color="#2563eb"
+							style={{
+								paddingBlock: spacing.sm
+							}}
+						/>
+					) : (
+						<View
+							style={{
+								alignItems: "center",
+								paddingBlock: spacing.xs
+							}}
+						>
+							<Text
+								style={{
+									color: colors.border,
+									marginTop: spacing.xs
+								}}
+							>No properties found</Text>
+							<Text
+								style={{
+									color: colors.placeholder,
+									marginTop: spacing.xs
+								}}
+							>Try a different search or adjust filters</Text>
 						</View>
 					)
 				}
