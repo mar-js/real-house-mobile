@@ -1,3 +1,5 @@
+import Ionicons from "@expo/vector-icons/Ionicons";
+
 /** @deprecated Import from `@/types/auth` instead */
 export type {
 	IButtonAction as IButtonActionSignIn,
@@ -5,6 +7,12 @@ export type {
 	IFormSignUp, IResetAccount, IVerifyAccount as IVerifyAccountSignIn,
 	IVerifyAccount as IVerifyAccountSignUp
 } from "@/types/auth";
+
+export interface ISpecItem {
+	icon: keyof typeof Ionicons.glyphMap
+	label: string
+	value: string
+}
 
 export interface IFilterModal {
 	visible: boolean
