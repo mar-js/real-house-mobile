@@ -20,7 +20,7 @@ export default function Property() {
   const { id } = useLocalSearchParams<{ id: string }>()
   const { userId } = useAuth()
   const router = useRouter()
-  const isAdmin = useUserStore()
+  const { isAdmin } = useUserStore()
   const [property, setProperty] = useState<IProperty | null>(null)
   const [loading, setLoading] = useState(true)
   const [activeIndex, setActiveIndex] = useState(0)
