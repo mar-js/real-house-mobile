@@ -152,21 +152,23 @@ export const PropertyCard = ({ property, onUnsave, showSave }: IPropertyCard): J
           </View>
         </View>
       </View>
-      <TouchableOpacity
-        onPress={toggleSave}
-        disabled={saveLoading}
-        style={{
-          position: "absolute",
-          top: 0,
-          right: 10
-        }}
-      >
-        <Ionicons
-          name={isSaved ? "heart" : "heart-outline"}
-          size={size.xs}
-          color={isSaved ? "#ef4444" : "#9ca3af"}
-        />
-      </TouchableOpacity>
+      {showSave && (
+        <TouchableOpacity
+          onPress={toggleSave}
+          disabled={saveLoading}
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 10
+          }}
+        >
+          <Ionicons
+            name={isSaved ? "heart" : "heart-outline"}
+            size={size.xs}
+            color={isSaved ? "#ef4444" : "#9ca3af"}
+          />
+        </TouchableOpacity>
+      )}
     </TouchableOpacity>
   )
 }
