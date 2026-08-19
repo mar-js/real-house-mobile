@@ -8,6 +8,12 @@ export type {
 	IVerifyAccount as IVerifyAccountSignUp
 } from "@/types/auth";
 
+export interface ISavedProperty {
+	id: string
+	property_id: string
+	properties: IProperty
+}
+
 export interface ISpecItem {
 	icon: keyof typeof Ionicons.glyphMap
 	label: string
