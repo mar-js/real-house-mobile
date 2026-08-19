@@ -1,4 +1,5 @@
 import { IPropertyCard } from "@/global/interfaces";
+import { useSavedProperty } from "@/hooks/useSavedProperty";
 import { colors, radius, shadow, size, spacing } from "@/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useRouter } from "expo-router";
@@ -7,7 +8,7 @@ import { JSX } from "react/jsx-runtime";
 
 export const PropertyCard = ({ property, onUnsave, showSave }: IPropertyCard): JSX.Element => {
   const router = useRouter()
-  const isSaved = false
+  const { isSaved, saveLoading, toggleSave } = useSavedProperty({ propertyId: property.id, onUnsave })
 
   const handlerNavigationProperty = () => (
     router.push(`/(root)/property/${property.id}`)
@@ -152,6 +153,8 @@ export const PropertyCard = ({ property, onUnsave, showSave }: IPropertyCard): J
         </View>
       </View>
       <TouchableOpacity
+        onPress={toggleSave}
+        disabled={saveLoading}
         style={{
           position: "absolute",
           top: 0,
