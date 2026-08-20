@@ -8,6 +8,13 @@ export type {
 	IVerifyAccount as IVerifyAccountSignUp
 } from "@/types/auth";
 
+export interface IToggle {
+	label: string
+	value: boolean
+	onChange: (v: boolean) => void
+	description?: string
+}
+
 export interface ICounter {
 	label: string
 	value: number
