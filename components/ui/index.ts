@@ -5,3 +5,4 @@ export { MenuItem } from "./MenuItem";
 export { PlaceholderScreen } from "./PlaceholderScreen";
 export { PropertyCard } from "./PropertyCard";
 export { SpecItem } from "./SpecItem";
+export { Toggle } from "./Toggle";
