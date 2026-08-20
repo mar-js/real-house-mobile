@@ -28,6 +28,12 @@
 		"plugins": [
 			"expo-router",
 			[
+				"expo-location",
+				{
+					"locationWhenInUsePermission": "Allow Real House to accesss your location to tag property coordinates."
+				}
+			],
+			[
 				"expo-splash-screen",
 				{
 					"image": "./assets/images/logo-splash-screen.png",
