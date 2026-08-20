@@ -88,7 +88,7 @@ export default function Search() {
 
 		try {
 			const { data } = await query.order("created_at", { ascending: true })
-			setResults(data ?? [])
+			setResults(data || [])
 			setLoading(false)
 		} catch (error) {
 			setResults([])

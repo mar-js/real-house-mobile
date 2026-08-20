@@ -28,8 +28,8 @@ export default function Property() {
   const [imageViewerVisible, setImageViewerVisible] = useState(false)
   const client = useSupabase()
   const { width: widthWindow } = Dimensions.get("window")
-  const { isSaved, saveLoading, toggleSave} = useSavedProperty({propertyId: id ?? ""})
-  const isLongDesc = (property?.description?.length ?? 0) > 150
+  const { isSaved, saveLoading, toggleSave} = useSavedProperty({propertyId: id || ""})
+  const isLongDesc = (property?.description?.length || 0) > 150
   const displayDesc = expanded || !isLongDesc ? property?.description : property?.description?.slice(0, 150) + "..."
   const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${
     (property?.longitude || 0) - 0.003

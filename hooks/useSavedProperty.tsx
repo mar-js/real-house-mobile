@@ -24,7 +24,7 @@ export const useSavedProperty = ({ propertyId, onUnsave }: IUseSavedProperty) =>
         .eq("property_id", propertyId)
         .single()
 
-      setIsSaved(Boolean(data) ?? false)
+      setIsSaved(Boolean(data) || false)
     } catch (error) {
       setIsSaved(false)
     }

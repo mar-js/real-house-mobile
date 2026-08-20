@@ -25,7 +25,7 @@ export default function Saved() {
 				.select("id, property_id, properties(*)")
 				.eq("user_clerck_id", userId)
 				.order("id", { ascending: true })
-			setSaved((data as unknown as ISavedProperty[]) ?? [])
+			setSaved((data as unknown as ISavedProperty[]) || [])
 			setLoading(false)
 		} catch (error) {
 			setSaved([])

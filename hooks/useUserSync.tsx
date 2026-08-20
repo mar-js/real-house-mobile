@@ -16,7 +16,7 @@ export const useUserSync = () => {
       .single()
 
     if (data) {
-      setIsAdmin(data.is_admin ?? false)
+      setIsAdmin(data.is_admin || false)
       return
     }
 
@@ -32,7 +32,7 @@ export const useUserSync = () => {
       .select("is_admin")
       .single()
 
-    setIsAdmin(newUser?.is_admin ?? false)
+    setIsAdmin(newUser?.is_admin || false)
     return
   }
 

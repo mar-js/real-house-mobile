@@ -35,8 +35,8 @@ export default function Home() {
 				ascending: false
 			})
 
-		setFeatured(featuredData ?? [])
-		setRecommended(recommendedData ?? [])
+		setFeatured(featuredData || [])
+		setRecommended(recommendedData || [])
 		setLoading(false)
 	}, [])
 
@@ -87,7 +87,7 @@ export default function Home() {
 										color: colors.border,
 										fontWeight: "bold"
 									}}
-								>{user?.firstName ?? "User"}</Text>
+								>{user?.firstName || "User"}</Text>
 							</View>
 						</View>
 						<TouchableOpacity
