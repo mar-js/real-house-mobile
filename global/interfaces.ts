@@ -8,6 +8,12 @@ export type {
 	IVerifyAccount as IVerifyAccountSignUp
 } from "@/types/auth";
 
+export interface ICounter {
+	label: string
+	value: number
+	onChange: (v: number) => void
+}
+
 export interface IMenuItem {
 	icon: keyof typeof Ionicons.glyphMap
 	label: string
