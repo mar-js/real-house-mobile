@@ -8,6 +8,12 @@ export type {
 	IVerifyAccount as IVerifyAccountSignUp
 } from "@/types/auth";
 
+export interface IMenuItem {
+	icon: keyof typeof Ionicons.glyphMap
+	label: string
+	onPress?: () => void
+}
+
 export interface ISavedProperty {
 	id: string
 	property_id: string
