@@ -1,3 +1,4 @@
+export { Counter } from "./Counter";
 export { FeaturedCard } from "./FeaturedCard";
 export { FilterModal } from "./FilterModal";
 export { MenuItem } from "./MenuItem";
